@@ -19,6 +19,14 @@ git config --global init.defaultBranch main
 
 새 저장소 생성 시 기본 브랜치를 main으로 지정
 
+<<<<<<< HEAD
+=======
+
+git config --global --unset init.defaultBranch
+
+삭제
+
+>>>>>>> a23dd09 (ia)
 ### 4. 설정 확인
 
 git config --global --list

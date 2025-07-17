@@ -14,8 +14,13 @@ def divide(a, b):
 
 def main():
     try:
+<<<<<<< HEAD
         a = int(input("첫 번째 숫자를 입력하세요 : "))
         b = int(input("두 번째 숫자를 입력하세요 : "))
+=======
+        a = float(input("첫 번째 숫자를 입력하세요 : "))
+        b = float(input("두 번째 숫자를 입력하세요 : "))
+>>>>>>> a23dd09 (ia)
     except ValueError:
         print("잘못된 숫자 입력입니다.")
         return

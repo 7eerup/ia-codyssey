@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-
+    
     text = "Hello, DevOps"
 
     lang = request.args.get('lang', DEFAULT_LANG)
@@ -16,11 +16,8 @@ def home():
     fp = BytesIO()
     gTTS(text, "com", lang).write_to_fp(fp)
 
-    return Response(fp.getvalue(), mimetype='audio/mpeg') # 페이지 전달없이 바로 재생
+    return Response(fp.getvalue(), mimetype='audio/mpeg')
+
 
 if __name__ == '__main__':
-<<<<<<< HEAD
-    app.run(host='0.0.0.0', port=80)
-=======
     app.run(host='0.0.0.0', port=8080)
->>>>>>> a23dd09 (ia)
