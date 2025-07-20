@@ -1,32 +1,37 @@
-def selection_sort(arr):
-    n = len(arr)
+def bubble_sort(numbers):
+    
+    n = len(numbers)
+    
     for i in range(n):
-        min_idx = i
-        for j in range(i + 1, n):
-            if arr[j] < arr[min_idx]:
-                min_idx = j
+        for j in range(0, n - i - 1):
+            if numbers[j] > numbers[j + 1]:
+                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
+    return numbers
 
-        arr[i], arr[min_idx] = arr[min_idx], arr[i]
-    return arr
 
 def main():
     try:
-        # 입력 값 받기 변환
-        input_str = input("숫자를 공백으로 구분해서 입력하세요.").strip()
-        if not input_str:
-            print("잘못된 입력입니다.")
-            return
-        
-        numbers = [float(num) for num in input_str.split()]
-    except ValueError:
-        print("잘못된 입력입니다.")
-        return
-    
-    sorted_numbers = selection_sort(numbers)
+        # 사용자 입력 받고 공백 기준으로 분리
+        input_str = input("숫자들을 공백으로 입력하세요: ")
 
-    # 출력: 소수점 포함
-    print("Sorted:", "".join(str(num) for num in sorted_numbers))
+        # 입력이 비어 있으면 예외 처리
+        if not input_str:
+            print("Invalid input.")
+            return
+
+        # 숫자 문자열을 float으로 변환
+        number_list = [float(num) for num in input_str.split()]
+    except ValueError:
+        print("Invalid input.")
+        return
+
+    # 버블 정렬 알고리즘으로 정렬
+    sorted_list = bubble_sort(number_list)
+
+    # 출력 (소수점 유지)
+    print(f"Sorted:, {sorted_list}")
 
 if __name__ == "__main__":
     main()
+
 
